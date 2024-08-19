@@ -1,0 +1,34 @@
+# vsim -do do_tst.do -wlf counter.wlf counter 
+# Loading std.standard
+# Loading work.counter(only)
+# do do_tst.do 
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: counter.wlf
+#           File in use by: MSI  Hostname: DESKTOP-B36TLQR  ProcessID: 31400
+#           Attempting to use alternate WLF file "./wlft7sqxem".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: counter.wlf
+#           Using alternate file: ./wlft7sqxem
+
+
+
+run 100
+
+run 10000
+# Paste insertion failed: force: (vish-4014) No objects found matching 'force'.
+# Paste insertion failed: 1: (vish-4014) No objects found matching '1'.
+
+
+
+force reset 1
+run 1000
+
+
+force reset 1 run 400 force reset 0 run 200
+# Invalid time value: run 400
+force reset 1 run 400 force reset 0 run 200
+# Invalid time value: run 400
+
+force reset 1
+run 400
+force reset 0
+run 200
+run 2000
